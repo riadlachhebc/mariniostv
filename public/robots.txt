@@ -1,0 +1,13 @@
+# robots.txt for Marinios IPTV
+# https://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+
+# Block non-content system paths
+Disallow: /api/
+Disallow: /.env
+Disallow: /node_modules/
+Disallow: /.git/
+
+Sitemap: https://mariniosiptvpro.com/sitemap.xml
