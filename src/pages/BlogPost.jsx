@@ -109,7 +109,7 @@ export const BlogPost = () => {
                 ))}
               </div>
             )}
-            <h1 className="text-4xl md:text-7xl lg:text-8xl font-extrabold text-brand-text leading-none mb-10 tracking-tighter font-display uppercase italic">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-brand-text leading-tight mb-10 tracking-tighter font-display uppercase italic">
               {post.title}
             </h1>
             
