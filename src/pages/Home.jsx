@@ -33,8 +33,8 @@ export const Home = () => {
   return (
     <div className="bg-brand-bg min-h-screen">
       <SEO
-        title="Marinios IPTV – #1 HD Live TV, Sports & Movies Streaming Service"
-        description="Buy the best IPTV subscription at Marinios IPTV. Enjoy 20,000+ live channels, 4K live sports, PPV, and zero buffering on Firestick, Smart TVs, and more."
+        title="Marinios IPTV – #1 HD Live TV & 4K Sports Streaming"
+        description="Buy the best IPTV subscription at Marinios IPTV. Enjoy 20,000+ live channels, 4K live sports, and zero buffering on Firestick or Smart TVs today."
         canonical="/"
         schema={{
           "@context": "https://schema.org/",

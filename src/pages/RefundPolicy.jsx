@@ -8,8 +8,8 @@ export const RefundPolicy = () => {
   return (
     <div className="bg-brand-bg min-h-screen">
       <SEO 
-        title="Symmetry Gaurantee – Marinios IPTV | Refund Strategy"
-        description="Marinios IPTV refund policy. Our commitment to stability and your satisfaction. How we handle cancellations and curatorial reversals."
+        title="Marinios IPTV Refund Policy – Our Satisfaction Strategy"
+        description="Marinios IPTV refund policy. Our commitment to stability and your satisfaction. Learn how we handle cancellations and reversals for our premium service."
         canonical="/refund"
       />
 

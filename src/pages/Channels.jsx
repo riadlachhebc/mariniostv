@@ -25,8 +25,8 @@ export const Channels = () => {
   return (
     <div className="bg-brand-bg min-h-screen">
       <SEO 
-        title="Marinios IPTV Channels List | USA, UK, Live Sports & VOD"
-        description="Explore over 20,000 live TV channels on Marinios IPTV. Get premium live sports, PPV events, and top USA, UK, and Canadian channels in 4K UHD."
+        title="Marinios IPTV Channels – 40,000+ Live HD Channels"
+        description="Browse our massive Marinios IPTV channel list. 40,000+ live channels including local, international, sports, and movies. Always updated, always stable."
         canonical="/channels-list"
       />
 

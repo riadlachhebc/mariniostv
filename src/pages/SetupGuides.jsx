@@ -20,8 +20,8 @@ export const SetupGuides = () => {
   return (
     <div className="bg-brand-bg min-h-screen">
       <SEO 
-        title="IPTV Setup Guides & Tutorials | Firestick, Tivimate, Smarters"
-        description="Learn how to easily install and set up Marinios IPTV on Amazon Firestick, Android, Smart TVs, Tivimate, and IPTV Smarters Pro with our step-by-step guides."
+        title="Marinios IPTV Setup Guides – Firestick, Smart TV & Box"
+        description="Easily set up Marinios IPTV on Firestick, Android, Smart TVs, Tivimate, and IPTV Smarters Pro. Our step-by-step tutorials ensure you get 4K streaming fast."
         canonical="/setup-guides"
       />
 

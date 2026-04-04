@@ -10,8 +10,8 @@ export const Reseller = () => {
   return (
     <div className="bg-brand-bg min-h-screen">
       <SEO 
-        title="Best Premium IPTV Reseller Panel | Marinios IPTV"
-        description="Start your own IPTV business with the Marinios IPTV reseller panel. Buy cheap credits, manage your own customers, and earn massive profit margins."
+        title="Marinios IPTV Reseller Panel – Start Your Own Business"
+        description="Start your own IPTV business with the Marinios IPTV reseller panel. Buy cheap credits, manage your own customers, and earn massive profit margins today."
         canonical="/iptv-reseller-panel"
       />
 

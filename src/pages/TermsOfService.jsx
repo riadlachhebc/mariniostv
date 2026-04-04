@@ -8,8 +8,8 @@ export const TermsOfService = () => {
   return (
     <div className="bg-brand-bg min-h-screen">
       <SEO 
-        title="Usage Architecture – Marinios IPTV | Terms of Service"
-        description="Marinios IPTV terms of service. Guidelines for your cinematic uplink, subscription responsibilities, and service protocols."
+        title="Marinios IPTV Terms of Service – Usage Protocols"
+        description="Marinios IPTV terms of service. Guidelines for your cinematic uplink, subscription responsibilities, and service protocols for a premium experience."
         canonical="/terms"
       />
 

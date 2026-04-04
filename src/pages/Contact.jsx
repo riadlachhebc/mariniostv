@@ -12,8 +12,8 @@ export const Contact = () => {
   return (
     <div className="bg-brand-bg min-h-screen">
       <SEO 
-        title="Curator Support – Marinios IPTV | Direct Curation"
-        description="Contact Marinios IPTV via WhatsApp for instant support, free trial requests, and subscription help. Fast response, 24/7 availability."
+        title="Marinios IPTV Support – Contact Us via WhatsApp 24/7"
+        description="Contact Marinios IPTV via WhatsApp for instant support, free trial requests, and subscription help. Fast response and 24/7 availability for all users."
         canonical="/contact"
       />
 

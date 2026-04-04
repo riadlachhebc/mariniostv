@@ -30,9 +30,9 @@ export const Blog = () => {
 
   return (
     <div className="bg-brand-bg min-h-screen">
-      <SEO 
-        title="Editorial Archive – Marinios IPTV | Strategic Insights"
-        description="Read our latest news, streaming tips, device setup guides, and updates from Marinios IPTV. Stay informed and get the most from your IPTV service."
+      <SEO
+        title="Marinios IPTV Blog – Latest IPTV News & Setup Tips"
+        description="Read our latest news, streaming tips, device setup guides, and updates from Marinios IPTV. Stay informed and get the most from your premium IPTV service."
         canonical="/blog"
       />
 
@@ -41,9 +41,9 @@ export const Blog = () => {
         <div className="absolute inset-0 bg-hero-radial opacity-30"></div>
         <div className="container max-w-7xl relative z-10 px-2 sm:px-4 mx-auto text-center">
           <div className="inline-flex py-1.5 px-5 rounded-full bg-brand-primary/5 text-xs font-extrabold text-brand-primary uppercase tracking-[0.3em] mb-10 font-display italic">Curated Literature</div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-brand-text mb-8 tracking-tighter leading-none font-display uppercase italic">
-            IPTV News & Insights<br />
-            <span className="text-brand-primary not-italic text-outline">Curator Journal.</span>
+          <h1 className="text-5xl md:text-8xl font-extrabold text-brand-text mb-8 tracking-tighter leading-none font-display uppercase italic">
+            THE EDITORIAL<br />
+            <span className="text-brand-primary not-italic text-outline">ARCHIVE.</span>
           </h1>
           <p className="text-lg md:text-2xl text-brand-muted max-w-2xl mx-auto font-medium leading-relaxed italic">
             Meticulously documented techniques, ecosystem expansions, and cinematic intelligence for the modern curator. Stay up to date with the latest from the <strong className="text-brand-text font-bold">Best premium IPTV service 2026</strong> and learn how to get the most out of your <strong className="text-brand-text font-bold">buffer-free IPTV provider</strong>.
@@ -77,16 +77,16 @@ export const Blog = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-14">
               {posts.map((post) => (
-                <Link 
-                  key={post.id || post.slug} 
-                  to={`/blog/${post.slug}`} 
+                <Link
+                  key={post.id || post.slug}
+                  to={`/blog/${post.slug}`}
                   className="group flex flex-col bg-brand-surface rounded-eight border border-brand-line overflow-hidden shadow-card hover:shadow-soft transition-all duration-700 hover:-translate-y-3"
                 >
                   <div className="aspect-[16/10] bg-brand-surface2 overflow-hidden relative">
                     {post.featuredImage?.url ? (
-                      <img 
-                        src={post.featuredImage.url} 
-                        alt={post.featuredImageAlt || post.title} 
+                      <img
+                        src={post.featuredImage.url}
+                        alt={post.featuredImageAlt || post.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
                         loading="lazy"
                       />
@@ -103,16 +103,16 @@ export const Blog = () => {
                   </div>
                   <div className="p-10 flex flex-col flex-grow relative">
                     <div className="flex items-center gap-4 mb-6">
-                        <div className="flex items-center gap-2 text-brand-faint text-[9px] font-black uppercase tracking-widest bg-brand-surface2 px-3 py-1.5 rounded-full border border-brand-line">
-                            <Calendar className="w-3.5 h-3.5 text-brand-primary" />
-                            {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                        </div>
-                        <div className="flex items-center gap-2 text-brand-faint text-[9px] font-black uppercase tracking-widest">
-                            <Clock className="w-3.5 h-3.5 text-brand-primary/40" />
-                            5 MIN READ
-                        </div>
+                      <div className="flex items-center gap-2 text-brand-faint text-[9px] font-black uppercase tracking-widest bg-brand-surface2 px-3 py-1.5 rounded-full border border-brand-line">
+                        <Calendar className="w-3.5 h-3.5 text-brand-primary" />
+                        {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                      </div>
+                      <div className="flex items-center gap-2 text-brand-faint text-[9px] font-black uppercase tracking-widest">
+                        <Clock className="w-3.5 h-3.5 text-brand-primary/40" />
+                        5 MIN READ
+                      </div>
                     </div>
-                    
+
                     <h2 className="text-2xl md:text-3xl font-extrabold text-brand-text mb-6 leading-[1.1] group-hover:text-brand-primary transition-colors line-clamp-2 tracking-tighter font-display uppercase italic">
                       {post.title}
                     </h2>
@@ -120,7 +120,7 @@ export const Blog = () => {
                       {post.excerpt}
                     </p>
                     <div className="mt-auto flex items-center text-brand-primary font-black text-xs uppercase tracking-[0.2em] group-hover:gap-4 transition-all duration-500">
-                      READ FULL BROADCAST 
+                      READ FULL BROADCAST
                       <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-all duration-500" />
                     </div>
                   </div>
@@ -138,7 +138,7 @@ export const Blog = () => {
           <h2 className="text-5xl md:text-9xl font-black text-white mb-10 tracking-tighter leading-none font-display uppercase italic">SYNCHRONIZE.</h2>
           <p className="text-xl md:text-2xl text-white/90 mb-16 font-bold tracking-wide">Stay informed on the latest cinematic intelligence.</p>
           <div className="flex items-center justify-center">
-             <Link to="/pricing" className="inline-flex items-center justify-center gap-3 px-14 py-6 bg-white text-brand-primary font-display font-black rounded-eight shadow-2xl hover:scale-105 active:scale-95 transition-all text-xl uppercase tracking-widest">
+            <Link to="/pricing" className="inline-flex items-center justify-center gap-3 px-14 py-6 bg-white text-brand-primary font-display font-black rounded-eight shadow-2xl hover:scale-105 active:scale-95 transition-all text-xl uppercase tracking-widest">
               BUY NOW <ArrowRight className="w-5 h-5" />
             </Link>
           </div>

@@ -7,8 +7,8 @@ export const FAQPage = () => {
   return (
     <div className="bg-brand-bg min-h-[70vh] pt-20 pb-24 px-4">
       <SEO 
-        title="Frequently Asked Questions | Marinios IPTV"
-        description="Find answers to all your questions about Marinios IPTV. Learn about our free trial, pricing, device setup, and multiple connections."
+        title="Marinios IPTV FAQ – Frequently Asked Questions Answered"
+        description="Find answers to common questions about Marinios IPTV subscriptions, device compatibility, channel lists, and technical support in our Knowledge Vault."
         canonical="/faq"
       />
       <div className="container max-w-4xl mx-auto">

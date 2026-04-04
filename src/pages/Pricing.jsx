@@ -18,8 +18,8 @@ export const Pricing = () => {
   return (
     <div className="bg-brand-bg min-h-screen">
       <SEO 
-        title="Premium IPTV Subscription Plans & Pricing | Marinios IPTV"
-        description="Choose your Marinios IPTV subscription plan. 3, 6 and 12-month packages, multi-device connections, 4K streaming, and secure PayPal / Crypto payments."
+        title="Marinios IPTV Pricing – Choose Your Premium TV Plan"
+        description="Select your Marinios IPTV plan: 3, 6, or 12-month subscriptions. Best premium IPTV service with 4K quality and 24/7 support. Buy IPTV with PayPal."
         canonical="/pricing"
         schema={{
           "@context": "https://schema.org/",

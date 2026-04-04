@@ -10,8 +10,8 @@ export const FreeTrial = () => {
   return (
     <div className="bg-brand-bg min-h-screen flex flex-col justify-center items-center py-20 px-4">
       <SEO 
-        title="Get a 24-Hour IPTV Free Trial | Marinios IPTV"
-        description="Test the best buffer-free streaming service today. Claim your 24-hour IPTV free trial with Marinios IPTV. Instant activation, no credit card required."
+        title="Marinios IPTV Free Trial – 24 Hours of Premium TV"
+        description="Request a 24-hour Marinios IPTV free trial to test our zero-buffering streaming service. Explore 40,000+ channels and 215,000+ movies for free today."
         canonical="/iptv-free-trial"
       />
 

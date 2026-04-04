@@ -8,8 +8,8 @@ export const PrivacyPolicy = () => {
   return (
     <div className="bg-brand-bg min-h-screen">
       <SEO 
-        title="Privacy Architecture – Marinios IPTV | Data Integrity"
-        description="Marinios IPTV privacy policy. How we handle your data, protect your cinematic uplink, and ensure a secure streaming ecosystem."
+        title="Marinios IPTV Privacy Policy – Data Safety & Security"
+        description="Learn how we handle your data, protect your cinematic uplink, and ensure a secure streaming ecosystem for all users within the Marinios IPTV network."
         canonical="/privacy"
       />
 

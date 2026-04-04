@@ -28,8 +28,8 @@ export const Devices = () => {
   return (
     <div className="bg-brand-bg min-h-screen">
       <SEO 
-        title="Compatible Ecosystem – Marinios IPTV | High-End Curation"
-        description="Marinios IPTV works on Smart TVs, Firestick, Android boxes, iPhones, iPads, PCs, and more. Easy 5-minute setup on any device."
+        title="Marinios IPTV Devices – Setup on Firestick & Smart TV"
+        description="Marinios IPTV works on Smart TVs, Firestick, Android boxes, and more. Enjoy a seamless 5-minute setup on any device for the best 4K streaming experience."
         canonical="/devices"
       />
 
