@@ -90,7 +90,7 @@ export const Layout = ({ children }) => {
               The premier streaming solution for the modern age. We prioritize visual excellence, stable libraries, and a premium editorial experience.
             </p>
             <div className="flex flex-col gap-4">
-              <div className="text-brand-text font-bold text-lg">curator@mariniosiptvpro.com</div>
+              <div className="text-brand-text font-bold text-lg">contact@mariniosiptvpro.com</div>
               <div className="flex gap-4">
                 <a href={createWhatsAppLink(WA_MESSAGES.support)} target="_blank" rel="noopener noreferrer" 
                    className="w-10 h-10 rounded-eight bg-brand-surface2 border border-brand-line flex items-center justify-center hover:bg-brand-primary/5 hover:border-brand-primary/30 transition-all cursor-pointer">
