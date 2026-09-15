@@ -11,6 +11,7 @@ export const SEO = ({
 }) => {
   const siteUrl = 'https://mariniosiptvpro.com';
   const fullUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
+  const fullImage = image.startsWith('http') ? image : `${siteUrl}${image.startsWith('/') ? image : `/${image}`}`;
 
   return (
     <Helmet>
@@ -24,7 +25,7 @@ export const SEO = ({
       <meta property="og:url" content={fullUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={fullImage} />
       <meta property="og:site_name" content="Marinios IPTV" />
 
       {/* Twitter */}
@@ -32,7 +33,7 @@ export const SEO = ({
       <meta name="twitter:url" content={fullUrl} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={fullImage} />
 
       {/* Dynamic Page Schema */}
       {schema && (

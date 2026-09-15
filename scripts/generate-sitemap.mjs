@@ -72,7 +72,7 @@ function generateSitemap() {
     writeFileSync(distPath, sitemap, 'utf-8');
     console.log(`✅ Sitemap written to dist: ${distPath}`);
   }
-  console.log(`   ${ROUTES.length} URLs included, dated ${today}`);
+  console.log(`   ${allRoutes.length} URLs included, dated ${today}`);
 }
 
 generateSitemap();
