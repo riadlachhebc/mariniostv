@@ -7,7 +7,7 @@ export const SEO = ({
   canonical, 
   type = 'website', 
   schema = null, 
-  image = 'https://mariniosiptvpro.com/assets/images/hero-main.webp' 
+  image = 'https://mariniosiptvpro.com/og-image.webp' 
 }) => {
   const siteUrl = 'https://mariniosiptvpro.com';
   const fullUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;

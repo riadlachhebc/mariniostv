@@ -7,13 +7,4 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  server: {
-    proxy: {
-      '/sitemap.xml': {
-        target: 'https://laseq-panel.vercel.app/api/public/sitemap?domain=mariniosiptvpro.com',
-        changeOrigin: true,
-        rewrite: () => '',
-      }
-    }
-  }
 })

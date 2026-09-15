@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
-import { FAQContent } from '../components/FAQ';
+import { FAQContent, devicesFAQs, generateFAQSchema } from '../components/FAQ';
 import { Tv, Smartphone, Monitor, Laptop, CheckCircle, ArrowRight, Zap, Shield, Globe } from 'lucide-react';
 import { createWhatsAppLink, WA_MESSAGES } from '../utils/whatsapp';
 import devicesImg from '../assets/images/devices-mockup.webp';
@@ -31,6 +31,7 @@ export const Devices = () => {
         title="Marinios IPTV Devices – Setup on Firestick & Smart TV"
         description="Marinios IPTV works on Smart TVs, Firestick, Android boxes, and more. Enjoy a seamless 5-minute setup on any device for the best 4K streaming experience."
         canonical="/devices"
+        schema={generateFAQSchema(devicesFAQs)}
       />
 
       {/* HERO: The Ecosystem Architecture */}
@@ -139,7 +140,7 @@ export const Devices = () => {
             <p className="text-brand-muted font-bold tracking-widest uppercase text-xs">Answering your most pressing setup questions</p>
           </div>
           <div className="glass-card p-8 md:p-12">
-            <FAQContent />
+            <FAQContent faqs={devicesFAQs} />
           </div>
         </div>
       </section>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import { Clock, Zap, Monitor, ShieldCheck, CheckCircle2, Tv, Smartphone, Laptop, ArrowRight, Star, PlayCircle, Sparkles, Globe, Shield } from 'lucide-react';
-import { FAQContent } from '../components/FAQ';
+import { FAQContent, homeFAQs, generateFAQSchema } from '../components/FAQ';
 import { PricingCards } from '../components/PricingCards';
 import { ReviewsSection } from '../components/ReviewsSection';
 import { BlogPreview } from '../components/BlogPreview';
@@ -36,16 +36,19 @@ export const Home = () => {
         title="Marinios IPTV – #1 HD Live TV & 4K Sports Streaming"
         description="Buy the best IPTV subscription at Marinios IPTV. Enjoy 20,000+ live channels, 4K live sports, and zero buffering on Firestick or Smart TVs today."
         canonical="/"
-        schema={{
-          "@context": "https://schema.org/",
-          "@type": "Product",
-          "name": "Marinios IPTV Subscription",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "ratingCount": "842"
-          }
-        }}
+        schema={[
+          {
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": "Marinios IPTV Subscription",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "ratingCount": "842"
+            }
+          },
+          generateFAQSchema(homeFAQs)
+        ]}
       />
 
       {/* HERO SECTION: The Cinematic Canvas */}
@@ -272,7 +275,7 @@ export const Home = () => {
             <p className="text-brand-muted font-bold tracking-widest uppercase text-xs">Everything you need to know about your new gallery</p>
           </div>
           <div className="glass-card p-8 md:p-12">
-            <FAQContent />
+            <FAQContent faqs={homeFAQs} />
             <div className="mt-16 pt-12 border-t border-brand-line text-center">
               <h3 className="text-2xl font-extrabold text-brand-text mb-4">Direct Inquiry?</h3>
               <p className="text-brand-muted mb-8 font-medium">Our curators are available 24/7 via private WhatsApp channel.</p>

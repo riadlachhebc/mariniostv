@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
-import { FAQContent } from '../components/FAQ';
+import { FAQContent, setupGuidesFAQs, generateFAQSchema } from '../components/FAQ';
 import { BookOpen, Tv, Smartphone, ArrowRight, Zap, Play } from 'lucide-react';
 
 export const SetupGuides = () => {
@@ -23,6 +23,7 @@ export const SetupGuides = () => {
         title="Marinios IPTV Setup Guides – Firestick, Smart TV & Box"
         description="Easily set up Marinios IPTV on Firestick, Android, Smart TVs, Tivimate, and IPTV Smarters Pro. Our step-by-step tutorials ensure you get 4K streaming fast."
         canonical="/setup-guides"
+        schema={generateFAQSchema(setupGuidesFAQs)}
       />
 
       {/* Hero Section */}
@@ -132,7 +133,7 @@ export const SetupGuides = () => {
             <p className="text-brand-muted font-bold tracking-widest uppercase text-xs">Answering common questions about app configuration</p>
           </div>
           <div className="glass-card p-8 md:p-12">
-            <FAQContent />
+            <FAQContent faqs={setupGuidesFAQs} />
           </div>
         </div>
       </section>

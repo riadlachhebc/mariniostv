@@ -15,6 +15,7 @@ import { Channels } from './pages/Channels';
 import { SetupGuides } from './pages/SetupGuides';
 import { FreeTrial } from './pages/FreeTrial';
 import { Reseller } from './pages/Reseller';
+import { NotFound } from './pages/NotFound';
 import { HelmetProvider } from 'react-helmet-async';
 
 const ScrollToTop = () => {
@@ -48,6 +49,7 @@ export default function App() {
             <Route path="/setup-guides" element={<SetupGuides />} />
             <Route path="/iptv-free-trial" element={<FreeTrial />} />
             <Route path="/iptv-reseller-panel" element={<Reseller />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
       </BrowserRouter>

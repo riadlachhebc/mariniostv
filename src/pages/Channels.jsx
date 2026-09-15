@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
-import { FAQContent } from '../components/FAQ';
+import { FAQContent, channelsFAQs, generateFAQSchema } from '../components/FAQ';
 import { MonitorPlay, Trophy, Film, ArrowRight, Zap, Flag, Globe } from 'lucide-react';
 
 export const Channels = () => {
@@ -28,6 +28,7 @@ export const Channels = () => {
         title="Marinios IPTV Channels – 40,000+ Live HD Channels"
         description="Browse our massive Marinios IPTV channel list. 40,000+ live channels including local, international, sports, and movies. Always updated, always stable."
         canonical="/channels-list"
+        schema={generateFAQSchema(channelsFAQs)}
       />
 
       {/* Hero Section */}
@@ -147,7 +148,7 @@ export const Channels = () => {
             <p className="text-brand-muted font-bold tracking-widest uppercase text-xs">Everything you need to know about our channel list & uptime</p>
           </div>
           <div className="glass-card p-8 md:p-12">
-            <FAQContent />
+            <FAQContent faqs={channelsFAQs} />
           </div>
         </div>
       </section>

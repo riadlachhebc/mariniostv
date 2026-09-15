@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import { ShieldCheck, Zap, Lock, CheckCircle2, ArrowRight, Star, Globe, Shield, CreditCard, Bitcoin } from 'lucide-react';
 import { PricingCards } from '../components/PricingCards';
-import { FAQContent } from '../components/FAQ';
+import { FAQContent, pricingFAQs, generateFAQSchema } from '../components/FAQ';
 import { ReviewsSection } from '../components/ReviewsSection';
 import { createWhatsAppLink, WA_MESSAGES } from '../utils/whatsapp';
 
@@ -21,16 +21,19 @@ export const Pricing = () => {
         title="Marinios IPTV Pricing – Choose Your Premium TV Plan"
         description="Select your Marinios IPTV plan: 3, 6, or 12-month subscriptions. Best premium IPTV service with 4K quality and 24/7 support. Buy IPTV with PayPal."
         canonical="/pricing"
-        schema={{
-          "@context": "https://schema.org/",
-          "@type": "Product",
-          "name": "Marinios IPTV Subscription",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "ratingCount": "320"
-          }
-        }}
+        schema={[
+          {
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": "Marinios IPTV Subscription",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "ratingCount": "320"
+            }
+          },
+          generateFAQSchema(pricingFAQs)
+        ]}
       />
 
       {/* HERO: The Logic of Curation */}
@@ -162,7 +165,7 @@ export const Pricing = () => {
             <p className="text-brand-muted font-bold tracking-widest uppercase text-xs">Addressing the architecture of our service</p>
           </div>
           <div className="glass-card p-10 md:p-16">
-            <FAQContent />
+            <FAQContent faqs={pricingFAQs} />
             <div className="mt-20 pt-16 border-t border-brand-line text-center">
               <h3 className="text-2xl font-extrabold text-brand-text mb-6 font-display">Next Steps After Purchasing?</h3>
               <p className="text-brand-muted mb-8 font-medium max-w-md mx-auto">Once your payment is processed, you will get instant access. Follow our simple guides or view the channel list while your account completes activation.</p>
