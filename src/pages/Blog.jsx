@@ -1,32 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
-import { Calendar, ArrowRight, BookOpen, Clock, Tag } from 'lucide-react';
+import { Calendar, ArrowRight, BookOpen, Clock } from 'lucide-react';
+import { getAllPosts } from '../data/blogPosts';
 
 export const Blog = () => {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const domain = import.meta.env.VITE_SITE_DOMAIN || window.location.host;
-        const apiUrl = import.meta.env.VITE_PANEL_API_URL || 'http://localhost:3001';
-        const res = await fetch(`${apiUrl}/api/public/posts?domain=${domain}`);
-        if (!res.ok) throw new Error('Failed to fetch posts from the server.');
-        const json = await res.json();
-        setPosts(json.data || []);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchPosts();
-  }, []);
-
-  const siteUrl = 'https://mariniosiptvpro.com';
+  const posts = getAllPosts();
 
   return (
     <div className="bg-brand-bg min-h-screen">
@@ -54,19 +33,7 @@ export const Blog = () => {
       {/* BLOG GRID: Tonal Cards */}
       <section className="py-16 md:py-24 px-4 bg-brand-bg border-t border-brand-line min-h-[60vh]">
         <div className="container mx-auto max-w-7xl">
-          {loading ? (
-            <div className="flex flex-col justify-center items-center h-48 space-y-6">
-              <div className="w-12 h-12 border-2 border-brand-primary/10 border-t-brand-primary rounded-full animate-spin"></div>
-              <p className="text-brand-muted font-display font-black text-[10px] uppercase tracking-[0.4em]">Decrypting Archives...</p>
-            </div>
-          ) : error ? (
-            <div className="text-center py-20 glass-card max-w-2xl mx-auto">
-              <p className="text-brand-primary font-bold mb-8 text-xl font-display uppercase">{error}</p>
-              <button onClick={() => window.location.reload()} className="btn-primary">
-                RETRY HANDSHAKE
-              </button>
-            </div>
-          ) : posts.length === 0 ? (
+          {posts.length === 0 ? (
             <div className="text-center py-24 glass-card max-w-3xl mx-auto border-dashed border-brand-line border-2">
               <div className="w-20 h-20 bg-brand-surface2 rounded-eight flex items-center justify-center mx-auto mb-8 shadow-sm">
                 <BookOpen className="w-10 h-10 text-brand-line" />
@@ -78,7 +45,7 @@ export const Blog = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-14">
               {posts.map((post) => (
                 <Link
-                  key={post.id || post.slug}
+                  key={post._id || post.slug}
                   to={`/blog/${post.slug}`}
                   className="group flex flex-col bg-brand-surface rounded-eight border border-brand-line overflow-hidden shadow-card hover:shadow-soft transition-all duration-700 hover:-translate-y-3"
                 >

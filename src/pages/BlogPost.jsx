@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { SEO } from '../components/SEO';
-import { Calendar, User, ArrowLeft, Tag, Clock, Share2, BookOpen } from 'lucide-react';
+import { Calendar, ArrowLeft, Tag, Clock, Share2, BookOpen } from 'lucide-react';
+import { getPostBySlug } from '../data/blogPosts';
 
 export const BlogPost = () => {
   const { slug } = useParams();
-  const [post, setPost] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
   const navigate = useNavigate();
+  const post = getPostBySlug(slug);
 
   const handleContentClick = (e) => {
     const anchor = e.target.closest('a');
@@ -16,7 +15,8 @@ export const BlogPost = () => {
       const href = anchor.getAttribute('href');
       const isInternalBlogLink = href && (
         href.startsWith('/blog/') || 
-        href.startsWith(window.location.origin + '/blog/')
+        href.startsWith(window.location.origin + '/blog/') ||
+        href.startsWith('/')
       );
       
       if (isInternalBlogLink) {
@@ -30,50 +30,20 @@ export const BlogPost = () => {
     }
   };
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        const domain = import.meta.env.VITE_SITE_DOMAIN || window.location.host;
-        const apiUrl = import.meta.env.VITE_PANEL_API_URL || 'http://localhost:3001';
-        const res = await fetch(`${apiUrl}/api/public/posts/${slug}?domain=${domain}`);
-        if (!res.ok) {
-          if (res.status === 404) throw new Error('Article not found.');
-          throw new Error('Failed to fetch article.');
-        }
-        const data = await res.json();
-        setPost(data);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchPost();
-  }, [slug]);
-
-  if (loading) return (
-    <div className="min-h-screen bg-brand-bg flex flex-col justify-center items-center space-y-6">
-      <div className="w-12 h-12 border-2 border-brand-primary/10 border-t-brand-primary rounded-full animate-spin"></div>
-      <p className="text-brand-muted font-display font-black text-[10px] uppercase tracking-[0.4em]">Synchronizing Stream...</p>
-    </div>
-  );
-
-  if (error) return (
-    <div className="min-h-screen bg-brand-bg flex flex-col items-center justify-center p-4">
-      <div className="glass-card p-12 text-center max-w-lg">
-        <p className="text-brand-primary font-black text-2xl mb-8 font-display uppercase italic">{error}</p>
-        <Link to="/blog" className="btn-primary">
-          <ArrowLeft className="w-4 h-4 mr-2" /> RETURN TO ARCHIVE
-        </Link>
+  if (!post) {
+    return (
+      <div className="min-h-screen bg-brand-bg flex flex-col items-center justify-center p-4">
+        <div className="glass-card p-12 text-center max-w-lg">
+          <p className="text-brand-primary font-black text-2xl mb-8 font-display uppercase italic">Article not found</p>
+          <p className="text-brand-muted mb-8">The requested article could not be located in our archive.</p>
+          <Link to="/blog" className="btn-primary">
+            <ArrowLeft className="w-4 h-4 mr-2" /> RETURN TO ARCHIVE
+          </Link>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 
-  if (!post) return null;
-
-  const siteUrl = 'https://mariniosiptvpro.com';
-  const canonicalUrl = `${siteUrl}/blog/${post.slug}`;
-  
   const formattedDate = new Date(post.publishedAt).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -87,7 +57,7 @@ export const BlogPost = () => {
         description={post.seo?.metaDescription || post.excerpt}
         canonical={`/blog/${post.slug}`}
         type="article"
-        image={post.featuredImage?.url || 'https://mariniosiptvpro.com/assets/images/hero-main.webp'}
+        image={post.featuredImage?.url || 'https://mariniosiptvpro.com/og-image.webp'}
       />
 
       {/* ARTICLE HEADER: High-End Curation */}
@@ -120,7 +90,7 @@ export const BlogPost = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-brand-primary" />
-                <span>8 MIN READ</span>
+                <span>5 MIN READ</span>
               </div>
               <div className="flex items-center gap-2">
                 <Share2 className="w-4 h-4 text-brand-primary/40" />
@@ -195,8 +165,8 @@ export const BlogPost = () => {
               <div className="p-8 border-l-2 border-brand-line bg-brand-surface2/30 rounded-r-eight">
                 <h4 className="text-xs font-black text-brand-faint uppercase font-display tracking-[0.4em] mb-6">Archive Access</h4>
                 <div className="space-y-6">
-                    <p className="text-brand-text font-bold text-sm leading-snug hover:text-brand-primary transition-colors cursor-pointer uppercase tracking-tighter italic">Optimizing Your Curation Interface for 4K Broadcasts</p>
-                    <p className="text-brand-text font-bold text-sm leading-snug hover:text-brand-primary transition-colors cursor-pointer uppercase tracking-tighter italic">Securing Your Uplink: A Guide to VPN Integration</p>
+                    <Link to="/blog/m3u-vs-xtream-codes-api-iptv-guide" className="block text-brand-text font-bold text-sm leading-snug hover:text-brand-primary transition-colors cursor-pointer uppercase tracking-tighter italic">M3U vs Xtream Codes Guide</Link>
+                    <Link to="/blog/iptv-trends-vpn-ai-2026" className="block text-brand-text font-bold text-sm leading-snug hover:text-brand-primary transition-colors cursor-pointer uppercase tracking-tighter italic">Securing Your Uplink: A Guide to VPN Integration</Link>
                 </div>
               </div>
             </div>

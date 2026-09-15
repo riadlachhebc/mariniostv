@@ -87,6 +87,20 @@ export const ROUTE_METADATA = {
   }
 };
 
+// Load local blog posts into metadata
+try {
+  const blogData = JSON.parse(readFileSync(join(__dirname, '..', 'src', 'data', 'blogPosts.json'), 'utf-8'));
+  for (const post of blogData) {
+    ROUTE_METADATA[`/blog/${post.slug}`] = {
+      title: `${post.seo?.metaTitle || post.title} – Marinios IPTV`,
+      description: post.seo?.metaDescription || post.excerpt,
+      canonical: `https://mariniosiptvpro.com/blog/${post.slug}`
+    };
+  }
+} catch {
+  // No blog posts
+}
+
 const ROUTES = Object.keys(ROUTE_METADATA);
 
 // Fallback generator when browser cannot be launched

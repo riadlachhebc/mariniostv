@@ -1,31 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, ArrowRight, BookOpen } from 'lucide-react';
+import { getRecentPosts } from '../data/blogPosts';
 
 export const BlogPreview = () => {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const posts = getRecentPosts(3);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const domain = import.meta.env.VITE_SITE_DOMAIN || window.location.host;
-        const apiUrl = import.meta.env.VITE_PANEL_API_URL || 'http://localhost:3001';
-        const res = await fetch(`${apiUrl}/api/public/posts?domain=${domain}`);
-        if (!res.ok) throw new Error('Failed to fetch posts');
-        const json = await res.json();
-        setPosts((json.data || []).slice(0, 3));
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchPosts();
-  }, []);
-
-  if (loading || error || posts.length === 0) {
+  if (!posts || posts.length === 0) {
     return null;
   }
 
@@ -52,7 +33,7 @@ export const BlogPreview = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
           {posts.map((post) => (
             <Link 
-              key={post.id || post.slug} 
+              key={post._id || post.slug} 
               to={`/blog/${post.slug}`} 
               className="group flex flex-col bg-brand-surface rounded-eight border border-brand-line overflow-hidden shadow-card hover:shadow-soft transition-all duration-700 hover:-translate-y-2"
             >

@@ -7,7 +7,7 @@
  * Usage: node scripts/generate-sitemap.mjs
  */
 
-import { writeFileSync, existsSync } from 'fs';
+import { writeFileSync, readFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -34,11 +34,26 @@ const ROUTES = [
   { path: '/refund', priority: '0.3', changefreq: 'yearly' },
 ];
 
+// Load local blog posts if available
+let blogRoutes = [];
+try {
+  const blogData = JSON.parse(readFileSync(join(__dirname, '..', 'src', 'data', 'blogPosts.json'), 'utf-8'));
+  blogRoutes = blogData.map(post => ({
+    path: `/blog/${post.slug}`,
+    priority: '0.7',
+    changefreq: 'monthly',
+    lastmod: post.updatedAt ? post.updatedAt.split('T')[0] : today
+  }));
+} catch {
+  // No blog posts found
+}
+
 function generateSitemap() {
-  const urls = ROUTES.map(({ path, priority, changefreq }) => `
+  const allRoutes = [...ROUTES, ...blogRoutes];
+  const urls = allRoutes.map(({ path, priority, changefreq, lastmod }) => `
   <url>
     <loc>${SITE_URL}${path}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${lastmod || today}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`).join('');
