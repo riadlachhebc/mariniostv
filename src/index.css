@@ -87,3 +87,291 @@
 ::-webkit-scrollbar-thumb {
   @apply bg-brand-primary/20 rounded-full hover:bg-brand-primary/40 transition-colors;
 }
+
+/* ==========================================================================
+   Editorial Article Styling Suite (Used by article-craftsman skill)
+   Transforms raw markdown/HTML into magazine-grade, non-boring visual layouts.
+   ========================================================================== */
+
+/* Callout Boxes */
+.article-callout {
+  margin: 2.25rem 0 !important;
+  padding: 1.5rem 1.75rem !important;
+  border-radius: 0.75rem !important;
+  border-left-width: 4px !important;
+  border-left-style: solid !important;
+  font-style: normal !important;
+}
+.article-callout p {
+  margin: 0 !important;
+  font-style: normal !important;
+  line-height: 1.7 !important;
+}
+.article-callout.tip {
+  background: rgba(106, 28, 246, 0.05) !important;
+  border-left-color: #6a1cf6 !important;
+}
+.article-callout.warning {
+  background: rgba(246, 191, 38, 0.1) !important;
+  border-left-color: #d97706 !important;
+}
+.article-callout.takeaway {
+  background: rgba(0, 103, 93, 0.07) !important;
+  border-left-color: #00675d !important;
+}
+.article-callout-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  font-weight: 800 !important;
+  font-size: 0.95rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  margin-bottom: 0.5rem !important;
+  font-family: var(--font-display) !important;
+}
+.article-callout.tip .article-callout-header { color: #6a1cf6 !important; }
+.article-callout.warning .article-callout-header { color: #b45309 !important; }
+.article-callout.takeaway .article-callout-header { color: #00675d !important; }
+
+/* 2-Column Responsive Card Grids */
+.article-grid-2 {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 1.25rem !important;
+  margin: 2.5rem 0 !important;
+}
+@media (min-width: 640px) {
+  .article-grid-2 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* Pros & Cons Cards */
+.article-card-pro {
+  background: rgba(0, 103, 93, 0.04) !important;
+  border: 1px solid rgba(0, 103, 93, 0.25) !important;
+  border-radius: 0.75rem !important;
+  padding: 1.5rem !important;
+  font-style: normal !important;
+}
+.article-card-con {
+  background: rgba(180, 19, 64, 0.04) !important;
+  border: 1px solid rgba(180, 19, 64, 0.25) !important;
+  border-radius: 0.75rem !important;
+  padding: 1.5rem !important;
+  font-style: normal !important;
+}
+.article-card-pro h4 {
+  color: #00675d !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.75rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 800 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+.article-card-con h4 {
+  color: #b41340 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.75rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 800 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+.article-card-pro ul, .article-card-con ul {
+  padding-left: 1.25rem !important;
+  margin: 0 !important;
+}
+.article-card-pro li, .article-card-con li {
+  margin-bottom: 0.4rem !important;
+  font-size: 0.95rem !important;
+  font-style: normal !important;
+  line-height: 1.6 !important;
+}
+
+/* Step-by-Step Tutorial Cards */
+.article-step {
+  display: flex !important;
+  gap: 1.25rem !important;
+  margin: 1.75rem 0 !important;
+  padding: 1.5rem !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(171, 173, 174, 0.25) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+  align-items: flex-start !important;
+  font-style: normal !important;
+}
+.article-step-num {
+  flex-shrink: 0 !important;
+  width: 2.75rem !important;
+  height: 2.75rem !important;
+  border-radius: 0.5rem !important;
+  background: linear-gradient(135deg, #6a1cf6 0%, #ac8eff 100%) !important;
+  color: #ffffff !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 900 !important;
+  font-size: 1.15rem !important;
+  font-family: var(--font-display) !important;
+  box-shadow: 0 4px 12px rgba(106, 28, 246, 0.3) !important;
+}
+.article-step-body {
+  flex: 1 !important;
+}
+.article-step-body h4 {
+  margin-top: 0 !important;
+  margin-bottom: 0.35rem !important;
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
+  color: #2c2f30 !important;
+}
+.article-step-body p {
+  margin: 0 !important;
+  font-size: 0.95rem !important;
+  font-style: normal !important;
+  line-height: 1.6 !important;
+  color: #595c5d !important;
+}
+
+/* Stat & Metric Highlight Grid */
+.article-stat-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+  gap: 1rem !important;
+  margin: 2.5rem 0 !important;
+}
+.article-stat-box {
+  background: #ffffff !important;
+  border: 1px solid rgba(171, 173, 174, 0.25) !important;
+  border-radius: 0.75rem !important;
+  padding: 1.5rem 1rem !important;
+  text-align: center !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+}
+.article-stat-num {
+  font-size: 2.25rem !important;
+  font-weight: 900 !important;
+  color: #6a1cf6 !important;
+  line-height: 1 !important;
+  margin-bottom: 0.4rem !important;
+  font-family: var(--font-display) !important;
+}
+.article-stat-label {
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #757778 !important;
+  line-height: 1.2 !important;
+}
+
+/* Comparison Tables */
+.article-table-wrap {
+  overflow-x: auto !important;
+  margin: 2.5rem 0 !important;
+  border-radius: 0.75rem !important;
+  border: 1px solid rgba(171, 173, 174, 0.25) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+}
+.article-table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  text-align: left !important;
+  margin: 0 !important;
+}
+.article-table th {
+  background: #2c2f30 !important;
+  color: #ffffff !important;
+  padding: 1rem 1.25rem !important;
+  font-size: 0.85rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  border: none !important;
+}
+.article-table td {
+  padding: 1rem 1.25rem !important;
+  border-bottom: 1px solid rgba(171, 173, 174, 0.15) !important;
+  background: #ffffff !important;
+  font-size: 0.95rem !important;
+  font-style: normal !important;
+  color: #2c2f30 !important;
+}
+.article-table tr:nth-child(even) td {
+  background: #eff1f2 !important;
+}
+.article-badge {
+  display: inline-block !important;
+  padding: 0.25rem 0.65rem !important;
+  border-radius: 9999px !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+.article-badge.green {
+  background: rgba(0, 103, 93, 0.12) !important;
+  color: #00675d !important;
+}
+.article-badge.purple {
+  background: rgba(106, 28, 246, 0.12) !important;
+  color: #6a1cf6 !important;
+}
+
+/* In-Article Conversion Call-To-Action (CTA) Box */
+.article-cta-box {
+  margin: 3.5rem 0 !important;
+  padding: 2.5rem 2rem !important;
+  background: linear-gradient(135deg, #1f2122 0%, #2c2f30 100%) !important;
+  color: #ffffff !important;
+  border-radius: 1rem !important;
+  text-align: center !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12) !important;
+  border: 1px solid rgba(106, 28, 246, 0.35) !important;
+  font-style: normal !important;
+}
+.article-cta-box h3 {
+  color: #ffffff !important;
+  font-size: 1.85rem !important;
+  font-weight: 900 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.02em !important;
+}
+.article-cta-box p {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 1.05rem !important;
+  max-width: 34rem !important;
+  margin: 0 auto 1.75rem auto !important;
+  font-style: normal !important;
+  line-height: 1.6 !important;
+}
+.article-cta-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  background: #6a1cf6 !important;
+  color: #ffffff !important;
+  padding: 0.9rem 2.25rem !important;
+  border-radius: 0.5rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  font-size: 0.9rem !important;
+  box-shadow: 0 8px 24px rgba(106, 28, 246, 0.4) !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+}
+.article-cta-btn:hover {
+  background: #5d00e3 !important;
+  transform: translateY(-2px) !important;
+  color: #ffffff !important;
+}
+
