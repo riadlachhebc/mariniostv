@@ -376,7 +376,9 @@
 }
 
 /* Editorial In-Article Links */
-.editorial-content a {
+.editorial-content p a,
+.editorial-content li a,
+.editorial-content td a {
   color: #6a1cf6 !important;
   font-weight: 700 !important;
   text-decoration: underline !important;
@@ -384,9 +386,31 @@
   text-underline-offset: 3px !important;
   transition: all 0.2s ease !important;
 }
-.editorial-content a:hover {
+.editorial-content p a:hover,
+.editorial-content li a:hover,
+.editorial-content td a:hover {
   color: #2c2f30 !important;
   text-decoration-color: #2c2f30 !important;
+}
+
+/* ALWAYS White Text for Call-To-Action Buttons */
+.editorial-content a.article-cta-btn,
+.article-cta-btn,
+.article-cta-box a.article-cta-btn {
+  color: #ffffff !important;
+  background: #6a1cf6 !important;
+  text-decoration: none !important;
+  font-weight: 800 !important;
+}
+.editorial-content a.article-cta-btn:hover,
+.article-cta-btn:hover,
+.article-cta-box a.article-cta-btn:hover {
+  color: #ffffff !important;
+  background: #5d00e3 !important;
+  text-decoration: none !important;
+}
+.article-cta-box a:not(.article-cta-btn) {
+  color: #ac8eff !important;
 }
 
 /* Related Reading / Interlinks Box */
@@ -434,6 +458,7 @@
   border-color: rgba(106, 28, 246, 0.35) !important;
   transform: translateX(4px) !important;
 }
+.editorial-content .article-related-item a,
 .article-related-item a {
   text-decoration: none !important;
   color: #2c2f30 !important;
@@ -444,6 +469,7 @@
   justify-content: space-between !important;
   width: 100% !important;
 }
+.editorial-content .article-related-item a:hover,
 .article-related-item a:hover {
   color: #6a1cf6 !important;
 }

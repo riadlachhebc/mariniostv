@@ -102,7 +102,7 @@ export const BlogPost = () => {
       </header>
 
       {/* FEATURED IMAGE: High-Impact */}
-      <div className="container max-w-6xl mx-auto px-4 -mt-8 md:-mt-12 relative z-20">
+      <div className="container max-w-5xl mx-auto px-4 mt-8 md:mt-12 relative z-20">
         {post.featuredImage?.url ? (
           <div className="rounded-eight overflow-hidden shadow-2xl border border-brand-line aspect-[21/9] bg-brand-surface2">
             <img 
