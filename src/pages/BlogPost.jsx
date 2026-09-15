@@ -125,7 +125,7 @@ export const BlogPost = () => {
           {/* Main Content */}
           <div className="flex-1">
             <div 
-              className="editorial-content prose prose-stone max-w-none prose-lg md:prose-xl prose-headings:font-display prose-headings:uppercase prose-headings:italic prose-headings:font-extrabold prose-headings:tracking-tighter prose-headings:text-brand-text prose-p:text-brand-muted prose-p:font-medium prose-p:leading-loose prose-p:italic prose-p:opacity-90 prose-a:text-brand-primary prose-a:font-black prose-a:no-underline hover:prose-a:text-brand-text transition-colors prose-img:rounded-eight prose-img:shadow-soft prose-blockquote:border-l-4 prose-blockquote:border-brand-primary prose-blockquote:bg-brand-surface2 prose-blockquote:p-8 prose-blockquote:rounded-eight prose-blockquote:italic"
+              className="editorial-content prose prose-stone max-w-none prose-lg md:prose-xl prose-headings:font-display prose-headings:uppercase prose-headings:italic prose-headings:font-extrabold prose-headings:tracking-tighter prose-headings:text-brand-text prose-p:text-brand-muted prose-p:font-medium prose-p:leading-loose prose-p:italic prose-p:opacity-90 prose-a:text-brand-primary prose-a:font-black prose-a:underline prose-a:decoration-brand-primary/50 hover:prose-a:decoration-brand-primary hover:prose-a:text-brand-text transition-colors prose-img:rounded-eight prose-img:shadow-soft prose-blockquote:border-l-4 prose-blockquote:border-brand-primary prose-blockquote:bg-brand-surface2 prose-blockquote:p-8 prose-blockquote:rounded-eight prose-blockquote:italic"
               dangerouslySetInnerHTML={{ __html: post.contentHtml }} 
               onClick={handleContentClick}
             />

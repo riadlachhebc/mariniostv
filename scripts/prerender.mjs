@@ -177,8 +177,8 @@ async function prerender() {
   }
 
   const server = createStaticServer(DIST_DIR);
-  const PORT = 4173;
-  await new Promise((resolve) => server.listen(PORT, resolve));
+  await new Promise((resolve) => server.listen(0, resolve));
+  const PORT = server.address().port;
   console.log(`📡 Static server running on http://localhost:${PORT}\n`);
 
   let browser;

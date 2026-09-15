@@ -375,3 +375,76 @@
   color: #ffffff !important;
 }
 
+/* Editorial In-Article Links */
+.editorial-content a {
+  color: #6a1cf6 !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-decoration-color: rgba(106, 28, 246, 0.45) !important;
+  text-underline-offset: 3px !important;
+  transition: all 0.2s ease !important;
+}
+.editorial-content a:hover {
+  color: #2c2f30 !important;
+  text-decoration-color: #2c2f30 !important;
+}
+
+/* Related Reading / Interlinks Box */
+.article-related-box {
+  margin: 3rem 0 !important;
+  padding: 1.75rem !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(106, 28, 246, 0.2) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 4px 20px rgba(106, 28, 246, 0.04) !important;
+  font-style: normal !important;
+}
+.article-related-title {
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #6a1cf6 !important;
+  margin-bottom: 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-family: var(--font-display) !important;
+}
+.article-related-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.75rem !important;
+}
+.article-related-item {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0.85rem 1.15rem !important;
+  border-radius: 0.5rem !important;
+  background: #f5f6f7 !important;
+  border: 1px solid rgba(171, 173, 174, 0.25) !important;
+  transition: all 0.2s ease !important;
+  margin: 0 !important;
+}
+.article-related-item:hover {
+  background: rgba(106, 28, 246, 0.05) !important;
+  border-color: rgba(106, 28, 246, 0.35) !important;
+  transform: translateX(4px) !important;
+}
+.article-related-item a {
+  text-decoration: none !important;
+  color: #2c2f30 !important;
+  font-weight: 700 !important;
+  font-size: 0.95rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+.article-related-item a:hover {
+  color: #6a1cf6 !important;
+}
+
